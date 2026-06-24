@@ -1,0 +1,50 @@
+.guidelines {
+  background-color: var(--bg-light);
+}
+
+.rules-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.rule-item {
+  overflow: hidden;
+}
+
+.rule-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  background: none;
+  color: var(--text-main);
+  text-align: left;
+  font-size: 1.1rem;
+}
+
+.rule-header:hover {
+  background-color: #f8fafc;
+  color: var(--secondary);
+}
+
+.rule-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-normal);
+}
+
+.rule-content.open {
+  max-height: 500px; /* arbitrary max height to allow animation */
+}
+
+.rule-body {
+  padding: 0 1.5rem 1.5rem;
+  border-top: 1px solid var(--border-light);
+  background-color: #f8fafc;
+  color: var(--text-muted);
+  line-height: 1.8;
+}

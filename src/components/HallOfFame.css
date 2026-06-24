@@ -1,0 +1,233 @@
+.hall-of-fame {
+  background-color: var(--bg-light);
+}
+
+.sub-section-title {
+  font-size: 1.75rem;
+  color: var(--secondary);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.mb-5 { margin-bottom: 3rem; }
+.mb-4 { margin-bottom: 2rem; }
+.mb-3 { margin-bottom: 1rem; }
+.mt-4 { margin-top: 2rem; }
+.text-center { text-align: center; }
+
+/* Admin Grid */
+.admin-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .admin-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  border-top: 4px solid #E87722;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-normal);
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+}
+
+.profile-photo-placeholder,
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 4px solid var(--tertiary);
+  box-shadow: var(--shadow-sm);
+}
+
+.profile-photo-placeholder {
+  background-color: var(--border-light);
+}
+
+.profile-photo {
+  object-fit: cover;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-info h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  color: var(--text-main);
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.contact-links a:hover {
+  color: var(--primary);
+}
+
+/* HMC Grid - 4 Column Responsive */
+.hmc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .hmc-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hmc-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.hmc-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+  position: relative;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.hmc-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.hmc-photo-placeholder,
+.hmc-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+.hmc-photo-placeholder {
+  background-color: var(--border-light);
+}
+
+.hmc-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.hmc-details h4 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+.hmc-role {
+  font-size: 0.75rem;
+  padding: 0.3rem 0.6rem;
+}
+
+.hall-of-fame .badge {
+  border-radius: 8px;
+}
+
+.contact-links-hmc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.contact-links-hmc a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.contact-links-hmc a:hover {
+  color: var(--primary);
+}
+
+/* X-HMC Section */
+.x-hmc-section {
+  margin-top: 4rem;
+}
+
+.past-hmc-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.past-hmc-year-heading {
+  font-size: 1.5rem;
+  color: var(--text-main);
+  border-bottom: 2px solid var(--border-light);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0;
+}
+
+.x-hmc-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.x-hmc-served-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(202, 138, 4, 0.15);
+  color: #92400e;
+  font-size: 0.7rem;
+  padding: 0.25rem 0.6rem;
+  border-bottom-left-radius: var(--radius-md);
+  font-weight: 700;
+  z-index: 2;
+}
