@@ -102,7 +102,7 @@ const Footer = () => {
 
         {/* ── Bottom Bar ── */}
         <div className="footer-bottom">
-          <p>© 2024–25 Brahmaputra HMC, IIT Guwahati. All rights reserved.</p>
+          <p>© 2026–27 Brahmaputra HMC, IIT Guwahati. All rights reserved.</p>
           <p>Made with <span style={{ color: 'var(--brand-orange)' }}>❤️</span> by Brahmaputra HMC</p>
         </div>
       </div>
