@@ -1,50 +1,136 @@
-.guidelines {
-  background-color: var(--bg-light);
+/* ── Guidelines Header ── */
+.guidelines-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
 }
 
+.guidelines-header-text { flex: 1; }
+
+.guidelines-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 6px;
+  line-height: 1.5;
+  max-width: 560px;
+}
+
+.guidelines-pdf-btn {
+  flex-shrink: 0;
+  font-size: 13px;
+  padding: 9px 18px;
+  white-space: nowrap;
+  margin-top: 26px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ── Accordion ── */
 .rules-accordion {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  max-width: 800px;
-  margin: 0 auto;
+  gap: 8px;
 }
 
-.rule-item {
-  overflow: hidden;
-}
+.rule-item { border-radius: var(--radius-md); overflow: hidden; }
 
+/* ── Accordion Header ── */
 .rule-header {
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem;
-  background: none;
-  color: var(--text-main);
+  width: 100%;
+  height: 56px;
+  padding: 0 20px;
+  background: white;
+  border: 1px solid #E5E7EB;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
   text-align: left;
-  font-size: 1.1rem;
+  gap: 12px;
 }
 
 .rule-header:hover {
-  background-color: #f8fafc;
-  color: var(--secondary);
+  background: #FAFAFA;
+  border-color: var(--brand-orange);
 }
 
+.rule-header.open {
+  border-color: var(--brand-orange);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.rule-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.rule-number {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--brand-orange);
+  flex-shrink: 0;
+}
+
+.rule-name {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.severity-badge {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.rule-chevron {
+  color: var(--text-muted);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+/* ── Accordion Content ── */
 .rule-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height var(--transition-normal);
+  transition: max-height 0.3s ease;
 }
 
 .rule-content.open {
-  max-height: 500px; /* arbitrary max height to allow animation */
+  max-height: 400px;
 }
 
 .rule-body {
-  padding: 0 1.5rem 1.5rem;
-  border-top: 1px solid var(--border-light);
-  background-color: #f8fafc;
-  color: var(--text-muted);
+  background: #FAFAFA;
+  border: 1px solid #E5E7EB;
+  border-top: none;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  padding: 20px;
+  font-size: 14px;
   line-height: 1.8;
+  color: #374151;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .guidelines-header { flex-direction: column; align-items: flex-start; }
+  .guidelines-pdf-btn { margin-top: 0; }
+  .rule-name { font-size: 13px; }
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, GraduationCap, Users } from 'lucide-react';
+import { Search, GraduationCap, Plus } from 'lucide-react';
 import './AlumniDirectory.css';
 
 const AlumniDirectory = () => {
@@ -8,54 +8,38 @@ const AlumniDirectory = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const programs = ['All', 'B.Tech', 'M.Tech', 'M.Des', 'Ph.D'];
-  const batches = ['All', '2026', '2025', '2024', '2023', '2022'];
+  const batches  = ['All', '2026', '2025', '2024', '2023', '2022', 'Older'];
 
+  // Empty — "To Be Updated"
   const directoryData = [];
 
-  const getAvatarColor = (dept) => {
-    switch(dept) {
-      case 'CSE': return '#1A3A6B';
-      case 'EEE': return '#E87722';
-      case 'ME': return '#0F6E56';
-      case 'Civil': return '#7C3AED';
-      default: return '#6B7280';
-    }
-  };
-
-  const filteredData = directoryData.filter(student => 
-    (activeProgram === 'All' || student.program === activeProgram) && 
-    (activeBatch === 'All' || student.batch === activeBatch) &&
-    (student.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-     student.department.toLowerCase().includes(searchQuery.toLowerCase()))
-  );
-
-  // Group by Batch
-  const groupedData = filteredData.reduce((acc, student) => {
-    if (!acc[student.batch]) {
-      acc[student.batch] = [];
-    }
-    acc[student.batch].push(student);
-    return acc;
-  }, {});
-
   return (
-    <div className="section alumni-directory bg-tertiary">
+    <div className="section alumni-directory">
       <div className="container">
-        <div className="text-center mb-5">
-          <GraduationCap className="text-primary mx-auto mb-2" size={48} />
-          <h2 className="section-title">Alumni & Student Directory</h2>
-          <p className="text-muted">Connect with current residents and our widespread alumni network.</p>
+        {/* Header */}
+        <div className="alumni-header">
+          <GraduationCap size={40} className="alumni-icon" />
+          <h2 className="section-title" style={{ paddingTop: 0 }}>Alumni &amp; Student Directory</h2>
+          <p className="alumni-subtitle">The Brahmaputra Family — past and present</p>
+          <a
+            href="https://forms.gle/YourGoogleFormLink"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-outline alumni-submit-btn"
+          >
+            Submit Your Details →
+          </a>
         </div>
 
-        <div className="directory-controls card mb-5">
-          <div className="search-bar w-100 mb-4" style={{ maxWidth: '100%' }}>
-            <Search className="text-muted" size={24} />
-            <input 
-              type="text" 
-              placeholder="Search by name or department..." 
+        {/* Controls */}
+        <div className="alumni-controls card">
+          <div className="search-bar w-100 mb-4">
+            <Search size={20} className="text-muted" />
+            <input
+              type="text"
+              placeholder="Search by name, branch, or batch year..."
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              style={{ fontSize: '1.1rem' }}
+              onChange={e => setSearchQuery(e.target.value)}
             />
           </div>
 
@@ -63,28 +47,27 @@ const AlumniDirectory = () => {
             <div className="filter-row">
               <span className="filter-label">Programme:</span>
               <div className="chip-group">
-                {programs.map(prog => (
-                  <button 
-                    key={prog}
-                    className={`chip ${activeProgram === prog ? 'active' : ''}`}
-                    onClick={() => setActiveProgram(prog)}
+                {programs.map(p => (
+                  <button
+                    key={p}
+                    className={`chip ${activeProgram === p ? 'active' : ''}`}
+                    onClick={() => setActiveProgram(p)}
                   >
-                    {prog}
+                    {p}
                   </button>
                 ))}
               </div>
             </div>
-
             <div className="filter-row">
               <span className="filter-label">Batch:</span>
               <div className="chip-group">
-                {batches.map(batch => (
-                  <button 
-                    key={batch}
-                    className={`chip ${activeBatch === batch ? 'active' : ''}`}
-                    onClick={() => setActiveBatch(batch)}
+                {batches.map(b => (
+                  <button
+                    key={b}
+                    className={`chip ${activeBatch === b ? 'active' : ''}`}
+                    onClick={() => setActiveBatch(b)}
                   >
-                    {batch}
+                    {b}
                   </button>
                 ))}
               </div>
@@ -92,39 +75,25 @@ const AlumniDirectory = () => {
           </div>
         </div>
 
-        <div className="directory-content">
-          {Object.keys(groupedData).sort((a, b) => b - a).map(batch => (
-            <div key={batch} className="batch-group mb-5">
-              <h3 className="batch-title">
-                <Users className="text-secondary" size={24} />
-                Batch of {batch}
-              </h3>
-              
-              <div className="student-cards-grid">
-                {groupedData[batch].map((student, idx) => (
-                  <div key={idx} className="student-card card">
-                    <div className="student-avatar" style={{ backgroundColor: getAvatarColor(student.department) }}>
-                      {student.name.charAt(0)}
-                    </div>
-                    <div className="student-info">
-                      <h4 className="student-name">{student.name}</h4>
-                      <p className="student-dept">{student.department}</p>
-                      <div className="student-badges">
-                        <span className="badge badge-program">{student.program}</span>
-                        <span className="badge badge-batch">{student.batch}</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-          
-          {Object.keys(groupedData).length === 0 && (
-            <div className="empty-state text-center card py-5">
-              <p className="text-muted" style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>To Be Updated</p>
-            </div>
-          )}
+        {/* To Be Updated State */}
+        <div className="alumni-empty-state">
+          <div className="empty-icon-wrap">
+            <GraduationCap size={48} style={{ color: '#D1D5DB' }} />
+          </div>
+          <h3 className="empty-title">To Be Updated</h3>
+          <p className="empty-desc">
+            The alumni and student directory is currently being compiled. <br />
+            Be the first to contribute — submit your details to help build the Brahmaputra family network!
+          </p>
+          <a
+            href="https://forms.gle/YourGoogleFormLink"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+            style={{ marginTop: '1.25rem' }}
+          >
+            <Plus size={16} /> Add Your Details
+          </a>
         </div>
       </div>
     </div>

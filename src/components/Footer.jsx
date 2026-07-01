@@ -1,85 +1,111 @@
-import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Home, MessageCircle, X } from 'lucide-react';
+import React from 'react';
+import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { PiMicrosoftOutlookLogo } from 'react-icons/pi';
-import iitgMap from '../assets/IITG Campus Map.png';
+import brahmaLogo from '../assets/Brahma Logo.jpeg';
 import './Footer.css';
 
-const Footer = () => {
-  const [isMapEnlarged, setIsMapEnlarged] = useState(false);
+const quickLinks = [
+  { label: 'Home',              href: '#home' },
+  { label: 'About The Legacy', href: '#legacy' },
+  { label: 'Facilities',       href: '#facilities' },
+  { label: 'GC Championship',  href: '#gc' },
+  { label: 'HMC Portal',       href: '#hmc' },
+  { label: 'Alumni Directory', href: '#alumni' },
+  { label: 'Guidelines',       href: '#guidelines' },
+];
 
+const Footer = () => {
   return (
     <footer className="footer">
       <div className="container footer-container">
         <div className="footer-grid">
+          {/* ── Col 1: Brand ── */}
           <div className="footer-col brand-col">
-            <h3 className="footer-logo">
-              <span className="text-primary">Brahmaputra</span> Hostel
-            </h3>
-            <p className="footer-desc">
-              The premier student residence of IIT Guwahati, fostering a legacy of excellence, brotherhood, and innovation.
+            <div className="footer-brand">
+              <img
+                src={brahmaLogo}
+                alt="Brahmaputra Logo"
+                width="44" height="44"
+                style={{ borderRadius: '50%', objectFit: 'cover', border: '2px solid rgba(255,255,255,0.2)' }}
+                loading="lazy"
+              />
+              <span className="footer-brand-name">Brahmaputra</span>
+            </div>
+            <p className="footer-tagline">
+              The Legacy, The Brotherhood, The Excellence
             </p>
-            <div className="social-links">
-              <a href="#home" className="social-link"><Home size={20} /></a>
-              <a href="https://www.instagram.com/brahmaputra_hostel_iitg?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noreferrer" className="social-link"><FaInstagram size={20} /></a>
-              <a href="#" className="social-link"><FaWhatsapp size={20} /></a>
-              <a href="#" className="social-link"><PiMicrosoftOutlookLogo size={20} /></a>
+            <div className="footer-socials">
+              <a href="https://www.instagram.com/brahmaputra_hostel_iitg" target="_blank" rel="noreferrer" className="social-icon" aria-label="Instagram">
+                <FaInstagram size={18} />
+              </a>
+              <a href="#" className="social-icon" aria-label="WhatsApp">
+                <FaWhatsapp size={18} />
+              </a>
+              <a href="mailto:brahmaputra_off@iitg.ac.in" className="social-icon" aria-label="Email">
+                <PiMicrosoftOutlookLogo size={18} />
+              </a>
             </div>
           </div>
 
+          {/* ── Col 2: Quick Links ── */}
           <div className="footer-col">
-            <h4 className="footer-title">Quick Links</h4>
+            <h4 className="footer-col-title">Quick Links</h4>
             <ul className="footer-links">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About The Legacy</a></li>
-              <li><a href="#facilities">Facilities</a></li>
-              <li><a href="#hmc">HMC & Alumni</a></li>
-              <li><a href="#rules">Rules & Guidelines</a></li>
+              {quickLinks.map(l => (
+                <li key={l.label}>
+                  <a href={l.href} className="footer-link">{l.label}</a>
+                </li>
+              ))}
             </ul>
           </div>
 
+          {/* ── Col 3: Contact ── */}
           <div className="footer-col">
-            <h4 className="footer-title">Contact Us</h4>
-            <ul className="footer-contact">
+            <h4 className="footer-col-title">Contact Us</h4>
+            <ul className="footer-contact-list">
               <li>
-                <MapPin size={18} className="text-primary" />
+                <MapPin size={15} className="footer-contact-icon" />
                 <span>IIT Guwahati Campus, North Guwahati, Assam 781039</span>
               </li>
               <li>
-                <Phone size={18} className="text-primary" />
+                <Phone size={15} className="footer-contact-icon" />
                 <span>+91 XXXXXXXXXX (Hostel Office)</span>
               </li>
               <li>
-                <Mail size={18} className="text-primary" />
-                <span>brahmaputra_off@iitg.ac.in</span>
+                <Mail size={15} className="footer-contact-icon" />
+                <a href="mailto:brahmaputra_off@iitg.ac.in" className="footer-email-link">
+                  brahmaputra_off@iitg.ac.in
+                </a>
               </li>
             </ul>
           </div>
 
-          <div className="footer-col map-col">
-            <h4 className="footer-title">Location</h4>
-            <div className="map-container" onClick={() => setIsMapEnlarged(true)} style={{ cursor: 'pointer', overflow: 'hidden', borderRadius: '8px', border: '1px solid var(--border-light)' }}>
-              <img src={iitgMap} alt="IITG Map" style={{ width: '100%', height: 'auto', display: 'block', transition: 'transform 0.3s ease' }} loading="lazy" width="800" height="450" />
-            </div>
+          {/* ── Col 4: Location ── */}
+          <div className="footer-col">
+            <h4 className="footer-col-title">Location</h4>
+            <p className="footer-location-addr">
+              Brahmaputra Hostel, IIT Guwahati,<br />
+              Guwahati, Assam 781039
+            </p>
+            <a
+              href="https://maps.google.com/?q=Brahmaputra+Hostel+IIT+Guwahati"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="maps-pill"
+            >
+              <MapPin size={13} /> Open in Maps
+              <ExternalLink size={11} />
+            </a>
           </div>
         </div>
 
+        {/* ── Bottom Bar ── */}
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Brahmaputra Hostel, IIT Guwahati. All rights reserved.</p>
-          <p>Designed with <span className="text-primary">♥</span> for Brahmaputrians.</p>
+          <p>© 2024–25 Brahmaputra HMC, IIT Guwahati. All rights reserved.</p>
+          <p>Made with <span style={{ color: 'var(--brand-orange)' }}>❤️</span> by Brahmaputra HMC</p>
         </div>
       </div>
-
-      {isMapEnlarged && (
-        <div className="map-modal-overlay" onClick={() => setIsMapEnlarged(false)}>
-          <div className="map-modal-content" onClick={e => e.stopPropagation()}>
-            <button className="map-modal-close" onClick={() => setIsMapEnlarged(false)}>
-              <X size={32} />
-            </button>
-            <img src={iitgMap} alt="IITG Map Enlarged" className="map-modal-image" loading="lazy" width="800" height="450" />
-          </div>
-        </div>
-      )}
     </footer>
   );
 };

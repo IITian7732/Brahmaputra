@@ -1,184 +1,86 @@
-.alumni-directory {
-  background-color: var(--tertiary);
-}
+.alumni-directory { background: var(--brand-warm); }
 
-.mx-auto { margin-left: auto; margin-right: auto; }
-.py-5 { padding-top: 3rem; padding-bottom: 3rem; }
-.mb-4 { margin-bottom: 2rem; }
-.mb-5 { margin-bottom: 3rem; }
-.w-100 { width: 100%; }
-
-.directory-controls {
-  padding: 2rem;
+/* ── Header ── */
+.alumni-header {
   display: flex;
   flex-direction: column;
-}
-
-.search-bar {
-  display: flex;
   align-items: center;
-  gap: 1rem;
-  background-color: var(--bg-light);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-full);
-  padding: 0.8rem 1.5rem;
-  transition: all var(--transition-fast);
+  text-align: center;
+  margin-bottom: 36px;
+  gap: 10px;
 }
 
-.search-bar:focus-within {
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.2);
+.alumni-icon { color: var(--brand-orange); }
+
+.alumni-subtitle {
+  font-size: 15px;
+  color: var(--text-muted);
 }
 
-.search-bar input {
-  border: none;
-  background: transparent;
-  outline: none;
-  font-family: inherit;
-  width: 100%;
+.alumni-submit-btn {
+  margin-top: 6px;
+  font-size: 13.5px;
 }
 
-.filter-rows {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+/* ── Controls ── */
+.alumni-controls {
+  padding: 24px;
+  margin-bottom: 36px;
+  border-radius: var(--radius-md);
 }
+
+.filter-rows { display: flex; flex-direction: column; gap: 12px; }
 
 .filter-row {
   display: flex;
-  align-items: flex-start;
-  gap: 1rem;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .filter-label {
-  font-weight: 700;
-  color: var(--text-main);
-  min-width: 100px;
-  padding-top: 0.5rem;
-}
-
-@media (max-width: 768px) {
-  .filter-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-  .filter-label {
-    padding-top: 0;
-  }
-}
-
-.chip-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.chip {
-  background-color: var(--bg-light);
-  border: 1px solid var(--border-light);
-  padding: 0.5rem 1.25rem;
-  border-radius: var(--radius-full);
+  font-size: 13px;
   font-weight: 500;
   color: var(--text-muted);
-  cursor: pointer;
-  transition: all var(--transition-fast);
+  white-space: nowrap;
+  min-width: 80px;
 }
 
-.chip:hover {
-  border-color: var(--primary);
-  color: var(--primary);
-}
-
-.chip.active {
-  background-color: rgba(234, 88, 12, 0.1);
-  border-color: var(--primary);
-  color: var(--primary);
-}
-
-.batch-title {
+/* ── Empty State ── */
+.alumni-empty-state {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
-  font-size: 1.5rem;
-  color: var(--text-main);
-  margin-bottom: 2rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--primary);
-  display: inline-flex;
+  justify-content: center;
+  text-align: center;
+  padding: 56px 24px;
+  background: white;
+  border-radius: var(--radius-lg);
+  border: 1.5px dashed #D1D5DB;
+  min-height: 280px;
 }
 
-.student-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.student-card {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  padding: 1.5rem;
-  border-left: 4px solid var(--primary);
-  transition: transform var(--transition-fast);
-}
-
-.student-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
-}
-
-.student-avatar {
-  width: 56px;
-  height: 56px;
+.empty-icon-wrap {
+  width: 72px;
+  height: 72px;
+  background: #F9FAFB;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: 700;
-  flex-shrink: 0;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-bottom: 16px;
 }
 
-.student-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.student-name {
-  font-size: 1.1rem;
-  margin: 0;
-  color: var(--text-main);
-  font-weight: 700;
-}
-
-.student-dept {
-  font-size: 0.9rem;
-  margin: 0 0 0.5rem 0;
-  color: var(--text-muted);
-}
-
-.student-badges {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.badge {
-  font-size: 0.75rem;
+.empty-title {
+  font-size: 1.25rem;
   font-weight: 600;
-  padding: 0.25rem 0.6rem;
-  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  margin-bottom: 10px;
 }
 
-.badge-program {
-  background-color: #f1f5f9;
-  color: #475569;
-}
-
-.badge-batch {
-  background-color: rgba(234, 88, 12, 0.1);
-  color: var(--primary);
+.empty-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 480px;
 }

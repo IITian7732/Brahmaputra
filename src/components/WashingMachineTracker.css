@@ -1,0 +1,372 @@
+/* ── Section Wrapper ── */
+.wmt-section {
+  background: var(--brand-warm);
+  padding: 0 0 56px;
+}
+
+/* ══════════════════════════════════════
+   ACCORDION BUTTON
+══════════════════════════════════════ */
+.wmt-accordion-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 18px 24px;
+  background: #ffffff;
+  border: 1.5px solid #E5E7EB;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  text-align: left;
+  gap: 16px;
+}
+
+.wmt-accordion-btn:hover,
+.wmt-accordion-btn.open {
+  border-color: var(--brand-orange);
+  box-shadow: 0 4px 20px rgba(232, 119, 34, 0.10);
+}
+
+.wmt-accordion-btn.open {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Left side */
+.wmt-btn-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  min-width: 0;
+}
+
+.wmt-btn-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(232, 119, 34, 0.10);
+  color: var(--brand-orange);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.wmt-btn-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.wmt-btn-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.wmt-btn-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Right side */
+.wmt-btn-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.wmt-fleet-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 13px;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.wmt-chevron {
+  color: var(--text-muted);
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════
+   ACCORDION PANEL
+══════════════════════════════════════ */
+.wmt-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #ffffff;
+  border: 1.5px solid var(--brand-orange);
+  border-top: none;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.wmt-panel.open {
+  max-height: 3000px; /* large enough for all content */
+}
+
+.wmt-panel-inner {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ── Legend ── */
+.wmt-legend {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 10px 14px;
+  background: #F9FAFB;
+  border-radius: var(--radius-sm);
+  border: 1px solid #E5E7EB;
+}
+
+.wmt-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.wmt-legend-item.ok   { color: #166534; }
+.wmt-legend-item.warn { color: #854D0E; }
+.wmt-legend-item.err  { color: #991B1B; }
+
+.wmt-legend-sep {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ══════════════════════════════════════
+   FLOOR BLOCK
+══════════════════════════════════════ */
+.wmt-floor-block {
+  border: 1px solid #E5E7EB;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.wmt-floor-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: #F9FAFB;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.wmt-floor-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  flex: 1;
+}
+
+.wmt-floor-count {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: white;
+  border: 1px solid #E5E7EB;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE TABLE
+══════════════════════════════════════ */
+.wmt-table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.wmt-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px;
+  font-size: 13px;
+}
+
+.wmt-table thead tr {
+  background: #F3F4F6;
+}
+
+.wmt-table th {
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid #E5E7EB;
+  white-space: nowrap;
+}
+
+.wmt-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #F3F4F6;
+  vertical-align: middle;
+}
+
+.wmt-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.wmt-row:hover td {
+  background: #FAFAFA;
+}
+
+.wmt-row-issue td {
+  background: #FFFBF5;
+}
+.wmt-row-issue:hover td {
+  background: #FEF8EE;
+}
+
+/* ── Machine ID cell ── */
+.wmt-machine-id {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wmt-loc-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--brand-navy);
+  background: rgba(26, 58, 107, 0.08);
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.03em;
+  width: fit-content;
+}
+
+.wmt-machine-no {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ── Location cell ── */
+.wmt-location-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.wmt-location-main {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.wmt-location-sub {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* ── Status Badges ── */
+.wmt-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 11.5px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.wmt-part-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  font-size: 11.5px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.wmt-part-badge.ok {
+  background: #DCFCE7;
+  color: #166534;
+}
+
+.wmt-part-badge.err {
+  background: #FEE2E2;
+  color: #991B1B;
+}
+
+/* ── Footer Note ── */
+.wmt-footer-note {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 8px;
+  border-top: 1px dashed #E5E7EB;
+  font-style: italic;
+}
+
+/* ── Tabs ── */
+.wmt-tabs {
+  display: flex;
+  gap: 12px;
+  border-bottom: 2px solid #F3F4F6;
+  padding-bottom: 2px;
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+.wmt-tab-btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wmt-tab-btn:hover {
+  color: var(--brand-orange);
+}
+
+.wmt-tab-btn.active {
+  color: var(--brand-orange);
+  border-bottom-color: var(--brand-orange);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .wmt-accordion-btn { padding: 14px 16px; }
+  .wmt-btn-title { font-size: 13.5px; }
+  .wmt-btn-icon { width: 38px; height: 38px; }
+  .wmt-panel-inner { padding: 16px; gap: 20px; }
+  .wmt-legend-sep { display: none; }
+}

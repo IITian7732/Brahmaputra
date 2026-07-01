@@ -1,107 +1,131 @@
 import React from 'react';
-import { AlertTriangle, Sparkles, AlertCircle, Wifi, MessageCircle, Camera, ExternalLink } from 'lucide-react';
+import { AlertTriangle, Sparkles, AlertCircle, Wifi, ExternalLink } from 'lucide-react';
+import { FaWhatsapp, FaInstagram } from 'react-icons/fa';
 import { PiMicrosoftOutlookLogo } from 'react-icons/pi';
 import './QuickLinks.css';
 
-const QuickLinks = () => {
-  const complaintForms = [
-    {
-      title: "IMP Complaint",
-      desc: "Maintenance and infrastructure issues",
-      icon: <AlertTriangle size={24} />,
-      link: "https://www.iitg.ac.in/ipm/complaint/",
-      color: "#DC2626"
-    },
-    {
-      title: "Room Cleaning",
-      desc: "Request room sweeping or mopping",
-      icon: <Sparkles size={24} />,
-      link: "#",
-      color: "#2563EB"
-    },
-    {
-      title: "Appliance Complaint",
-      desc: "Washing machine or water cooler issues",
-      icon: <AlertCircle size={24} />,
-      link: "#",
-      color: "#EA580C"
-    },
-    {
-      title: "LAN Network Complaint",
-      desc: "Internet, Wi-Fi, or LAN port issues",
-      icon: <Wifi size={24} />,
-      link: "https://www.iitg.ac.in/cb/",
-      color: "#7C3AED"
-    }
-  ];
+const complaintForms = [
+  {
+    title: 'IMP Complaint Portal',
+    desc: 'Report furniture, plumbing, electrical, carpentry issues',
+    icon: <AlertTriangle size={20} />,
+    link: 'https://www.iitg.ac.in/ipm/complaint/',
+    color: '#DC2626',
+  },
+  {
+    title: 'Room Cleaning Service',
+    desc: 'Request room cleaning and housekeeping service',
+    icon: <Sparkles size={20} />,
+    link: '#',
+    color: '#2563EB',
+  },
+  {
+    title: 'Appliance Complaint',
+    desc: 'Washing machines, water coolers, vending machine issues',
+    icon: <AlertCircle size={20} />,
+    link: '#',
+    color: '#EA580C',
+  },
+  {
+    title: 'LAN / Network Complaint',
+    desc: 'Report internet, LAN, or network connectivity issues',
+    icon: <Wifi size={20} />,
+    link: 'https://www.iitg.ac.in/cb/',
+    color: '#7C3AED',
+  },
+];
 
-  const connectLinks = [
-    {
-      title: "WhatsApp Group",
-      desc: "Join the official community",
-      icon: <MessageCircle size={24} />,
-      link: "#",
-      color: "#16A34A"
-    },
-    {
-      title: "Instagram",
-      desc: "Follow us for updates and events",
-      icon: <Camera size={24} />,
-      link: "https://www.instagram.com/brahmaputra_hostel_iitg?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
-      color: "#DB2777"
-    },
-    {
-      title: "Outlook Email",
-      desc: "Official college communications",
-      icon: <PiMicrosoftOutlookLogo size={24} />,
-      link: "#",
-      color: "#1D4ED8"
-    }
-  ];
+const connectLinks = [
+  {
+    title: 'Brahmaputra WhatsApp Group',
+    desc: 'Official announcements and hostel updates',
+    icon: <FaWhatsapp size={20} />,
+    link: '#',
+    iconBg: '#DCFCE7',
+    iconColor: '#16A34A',
+  },
+  {
+    title: '@brahmaputra_iitg',
+    desc: 'Hostel life, events, and memories',
+    icon: <FaInstagram size={20} />,
+    link: 'https://www.instagram.com/brahmaputra_hostel_iitg',
+    iconBg: '#FCE7F3',
+    iconColor: '#BE185D',
+  },
+  {
+    title: 'Brahmaputra Official Email',
+    desc: 'For formal communication and queries',
+    icon: <PiMicrosoftOutlookLogo size={20} />,
+    link: 'mailto:brahmaputra_off@iitg.ac.in',
+    iconBg: '#DBEAFE',
+    iconColor: '#1D4ED8',
+  },
+];
 
-  const ButtonRow = ({ item }) => (
-    <a 
-      href={item.link} 
-      target="_blank" 
-      rel="noopener noreferrer" 
-      className="action-button-row"
-      style={{ borderLeftColor: item.color }}
+const ComplaintRow = ({ item }) => (
+  <a
+    href={item.link}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="action-row"
+    style={{ borderLeftColor: item.color }}
+  >
+    <div className="action-icon-plain" style={{ color: item.color }}>
+      {item.icon}
+    </div>
+    <div className="action-text">
+      <div className="action-title">{item.title}</div>
+      <div className="action-desc">{item.desc}</div>
+    </div>
+    <ExternalLink size={14} className="action-arrow" />
+  </a>
+);
+
+const ConnectRow = ({ item }) => (
+  <a
+    href={item.link}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="action-row connect-row"
+  >
+    <div
+      className="action-icon-square"
+      style={{ background: item.iconBg, color: item.iconColor }}
     >
-      <div className="action-icon" style={{ color: item.color }}>
-        {item.icon}
-      </div>
-      <div className="action-content">
-        <div className="action-title">{item.title}</div>
-        <div className="action-desc">{item.desc}</div>
-      </div>
-      <div className="action-arrow">
-        <ExternalLink size={20} />
-      </div>
-    </a>
-  );
+      {item.icon}
+    </div>
+    <div className="action-text">
+      <div className="action-title">{item.title}</div>
+      <div className="action-desc">{item.desc}</div>
+    </div>
+    <ExternalLink size={14} className="action-arrow" />
+  </a>
+);
 
+const QuickLinks = () => {
   return (
-    <div className="section quick-links">
+    <div className="section quick-links bg-light">
       <div className="container">
-        <h2 className="section-title">Quick Links & Grievances</h2>
-        
+        <h2 className="section-title">Quick Links &amp; Grievances</h2>
+        <p className="ql-subtitle">Fast access to everything you need — forms, socials, and official channels</p>
+
         <div className="ql-grid">
-          {/* Left Column */}
-          <div className="ql-column">
-            <h3 className="ql-column-title">Complaint Forms</h3>
+          {/* Left: Complaint Forms */}
+          <div className="ql-col">
+            <h3 className="ql-col-title">Complaint Forms</h3>
             <div className="ql-list">
-              {complaintForms.map((item, idx) => (
-                <ButtonRow key={idx} item={item} />
+              {complaintForms.map((item, i) => (
+                <ComplaintRow key={i} item={item} />
               ))}
             </div>
           </div>
 
-          {/* Right Column */}
-          <div className="ql-column">
-            <h3 className="ql-column-title">Connect With Us</h3>
+          {/* Right: Connect With Us */}
+          <div className="ql-col">
+            <h3 className="ql-col-title">Connect With Us</h3>
             <div className="ql-list">
-              {connectLinks.map((item, idx) => (
-                <ButtonRow key={idx} item={item} />
+              {connectLinks.map((item, i) => (
+                <ConnectRow key={i} item={item} />
               ))}
             </div>
           </div>
