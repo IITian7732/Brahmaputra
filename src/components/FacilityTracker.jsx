@@ -11,24 +11,27 @@ import './FacilityTracker.css';
   Row 2 — GREEN (Sports & Leisure): GYM, Music Room, Sports Room, TV Room
   Row 3 — BLUE  (Academic & Food): Library, Canteen & Juice, Hostel Ground, Pantry
 */
+const APPLIANCE_COMPLAINT_URL = 'https://forms.gle/xgCExftZyc2RvevL8';
+const GENERAL_COMPLAINT_URL   = 'https://forms.gle/bMJ83nc4gFgawNkc9';
+
 const facilities = [
   /* ─── Row 1: Gray / Services ─── */
-  { name: 'Hostel Office',    icon: <Building size={24}/>,    category: 'services', timing: '9:00 AM – 5:00 PM', desc: 'Administrative tasks, Warden offices, and hostel works.',               status: 'Working',  reportUrl: 'https://www.iitg.ac.in/ipm/complaint/' },
-  { name: 'Security Desk',   icon: <ShieldCheck size={24}/>, category: 'services', timing: '24 × 7',             desc: 'Main entrance monitoring, visitor logs and gate passes.',              status: 'Working',  reportUrl: 'https://www.iitg.ac.in/ipm/complaint/' },
-  { name: 'Stationary Shop', icon: <ShoppingCart size={24}/>,category: 'services', timing: '10:00 AM – 10:00 PM',desc: 'All daily and academic essentials available for students.',             status: 'Working',  reportUrl: 'https://www.iitg.ac.in/ipm/complaint/' },
-  { name: 'Vending Machine',  icon: <Coffee size={24}/>,      category: 'services', timing: '24 × 7',             desc: 'Snacks and drinks available near the security desk.',                  status: 'Working',  reportUrl: 'https://www.iitg.ac.in/ipm/complaint/' },
+  { name: 'Hostel Office',    icon: <Building size={24}/>,    category: 'services', timing: '9:00 AM – 5:00 PM', desc: 'Administrative tasks, Warden offices, and hostel works.',               status: 'Working',  reportUrl: GENERAL_COMPLAINT_URL },
+  { name: 'Security Desk',   icon: <ShieldCheck size={24}/>, category: 'services', timing: '24 × 7',             desc: 'Main entrance monitoring, visitor logs and gate passes.',              status: 'Working',  reportUrl: GENERAL_COMPLAINT_URL },
+  { name: 'Stationary Shop', icon: <ShoppingCart size={24}/>,category: 'services', timing: '10:00 AM – 10:00 PM',desc: 'All daily and academic essentials available for students.',             status: 'Working',  reportUrl: GENERAL_COMPLAINT_URL },
+  { name: 'Vending Machine',  icon: <Coffee size={24}/>,      category: 'services', timing: '24 × 7',             desc: 'Snacks and drinks available near the security desk.',                  status: 'Working',  reportUrl: APPLIANCE_COMPLAINT_URL },
 
   /* ─── Row 2: Green / Sports & Leisure ─── */
-  { name: 'GYM',              icon: <Dumbbell size={24}/>,    category: 'sports',   timing: '6:00 AM – 10:00 PM', desc: 'Well-equipped gym for fitness enthusiasts and athletes.',               status: 'Working',  reportUrl: 'https://www.iitg.ac.in/ipm/complaint/' },
-  { name: 'Music Room',       icon: <Music size={24}/>,       category: 'sports',   timing: '4:00 PM – 9:00 PM',  desc: 'Soundproof room with guitar, drums, speaker, and flute.',              status: 'Working',  reportUrl: 'https://www.iitg.ac.in/ipm/complaint/' },
-  { name: 'Sports Room',      icon: <Trophy size={24}/>,      category: 'sports',   timing: '10:00 AM – 11:00 PM',desc: 'Carrom, Chess, Foosball, Billiards, Table Tennis.',                     status: 'Working',  reportUrl: 'https://www.iitg.ac.in/ipm/complaint/' },
-  { name: 'TV Room',          icon: <Tv size={24}/>,          category: 'sports',   timing: '6:00 PM – 11:00 PM', desc: 'Watch matches and movies with friends in the common room.',            status: 'Working',  reportUrl: 'https://www.iitg.ac.in/ipm/complaint/' },
+  { name: 'GYM',              icon: <Dumbbell size={24}/>,    category: 'sports',   timing: '6:00 AM – 10:00 PM', desc: 'Well-equipped gym for fitness enthusiasts and athletes.',               status: 'Working',  reportUrl: GENERAL_COMPLAINT_URL },
+  { name: 'Music Room',       icon: <Music size={24}/>,       category: 'sports',   timing: '4:00 PM – 9:00 PM',  desc: 'Soundproof room with guitar, drums, speaker, and flute.',              status: 'Working',  reportUrl: GENERAL_COMPLAINT_URL },
+  { name: 'Sports Room',      icon: <Trophy size={24}/>,      category: 'sports',   timing: '10:00 AM – 11:00 PM',desc: 'Carrom, Chess, Foosball, Billiards, Table Tennis.',                     status: 'Working',  reportUrl: GENERAL_COMPLAINT_URL },
+  { name: 'TV Room',          icon: <Tv size={24}/>,          category: 'sports',   timing: '6:00 PM – 11:00 PM', desc: 'Watch matches and movies with friends in the common room.',            status: 'Working',  reportUrl: GENERAL_COMPLAINT_URL },
 
   /* ─── Row 3: Blue / Academic & Food ─── */
-  { name: 'Library',          icon: <BookOpen size={24}/>,    category: 'study',    timing: '8:00 AM – 11:00 PM', desc: 'Quiet study space with reference materials and books.',                 status: 'Working',  reportUrl: 'https://www.iitg.ac.in/ipm/complaint/' },
-  { name: 'Canteen & Juice',  icon: <Store size={24}/>,       category: 'study',    timing: '9:00 AM – 10:00 PM', desc: 'Snacks, beverages, fresh juices, and late-night meals.',               status: 'Working',  reportUrl: 'https://www.iitg.ac.in/ipm/complaint/' },
-  { name: 'Hostel Ground',    icon: <Map size={24}/>,         category: 'study',    timing: '24 × 7',             desc: 'Volleyball, Badminton, Football, and Cricket ground.',                 status: 'Working',  reportUrl: 'https://www.iitg.ac.in/ipm/complaint/' },
-  { name: 'Pantry',           icon: <Coffee size={24}/>,      category: 'study',    timing: '10:00 AM – 12:00 PM',desc: 'Microwave and induction cooktop for personal cooking.',                status: 'Working',  reportUrl: 'https://www.iitg.ac.in/ipm/complaint/' },
+  { name: 'Library',          icon: <BookOpen size={24}/>,    category: 'study',    timing: '8:00 AM – 11:00 PM', desc: 'Quiet study space with reference materials and books.',                 status: 'Working',  reportUrl: GENERAL_COMPLAINT_URL },
+  { name: 'Canteen & Juice',  icon: <Store size={24}/>,       category: 'study',    timing: '9:00 AM – 10:00 PM', desc: 'Snacks, beverages, fresh juices, and late-night meals.',               status: 'Working',  reportUrl: GENERAL_COMPLAINT_URL },
+  { name: 'Hostel Ground',    icon: <Map size={24}/>,         category: 'study',    timing: '24 × 7',             desc: 'Volleyball, Badminton, Football, and Cricket ground.',                 status: 'Working',  reportUrl: GENERAL_COMPLAINT_URL },
+  { name: 'Pantry',           icon: <Coffee size={24}/>,      category: 'study',    timing: '10:00 AM – 12:00 PM',desc: 'Microwave and induction cooktop for personal cooking.',                status: 'Working',  reportUrl: APPLIANCE_COMPLAINT_URL },
 ];
 
 const categoryConfig = {

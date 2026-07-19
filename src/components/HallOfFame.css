@@ -244,6 +244,12 @@
 }
 
 @media (max-width: 600px) {
-  .admin-grid { grid-template-columns: 1fr; }
-  .hmc-grid   { grid-template-columns: repeat(2, 1fr); }
+  .admin-grid { grid-template-columns: 1fr; gap: 16px; }
+  .warden-card { padding: 18px; }
+  .hmc-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .hmc-card { padding: 14px 8px; }
+  .hmc-photo { width: 64px; height: 64px; margin-bottom: 8px; border-width: 2px; }
+  .hmc-name { font-size: 12px; margin-bottom: 6px; }
+  .portfolio-badge { font-size: 9.5px; padding: 2px 6px; }
+  .hmc-contact-link { font-size: 10px; gap: 3px; }
 }

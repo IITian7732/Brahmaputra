@@ -370,3 +370,11 @@
   .wmt-panel-inner { padding: 16px; gap: 20px; }
   .wmt-legend-sep { display: none; }
 }
+
+@media (max-width: 600px) {
+  .wmt-accordion-btn { padding: 12px 14px; gap: 10px; }
+  .wmt-btn-icon { width: 34px; height: 34px; }
+  .wmt-btn-title { font-size: 13px; }
+  .wmt-tabs { flex-wrap: wrap; }
+  .wmt-tab-btn { padding: 8px 14px; font-size: 13px; }
+}

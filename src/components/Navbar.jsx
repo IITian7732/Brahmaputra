@@ -123,7 +123,7 @@ const Navbar = () => {
               </a>
             </li>
           ))}
-          <li style={{ marginTop: '1.5rem', padding: '0 1.5rem' }}>
+          <li style={{ marginTop: '1.5rem' }}>
             <a
               href="#quick-links"
               className="btn btn-primary"

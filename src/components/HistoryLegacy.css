@@ -433,12 +433,14 @@
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .legacy-grid { grid-template-columns: 1fr; }
-  .legacy-photo-collage { height: 240px; }
+  .legacy-photo-collage { height: 260px; }
   .gc-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
-  .legacy-stats-row { gap: 10px; }
-  .gc-summary-stats { gap: 12px; }
-  .gc-stat-box { padding: 16px 20px; min-width: 120px; }
+  .legacy-stats-row { flex-direction: column; gap: 12px; width: 100%; }
+  .legacy-stat-box { width: 100%; padding: 16px; }
+  .gc-summary-stats { flex-direction: column; gap: 12px; width: 100%; }
+  .gc-stat-box { width: 100%; padding: 16px; min-width: 0; }
+  .sport-card { padding: 16px; }
 }

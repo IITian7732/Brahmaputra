@@ -55,16 +55,22 @@
   gap: 20px;
 }
 
-@media (max-width: 1024px) {
-  .facilities-grid { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 900px) {
+  .facilities-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
 }
 
-@media (max-width: 768px) {
-  .facilities-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 400px) {
-  .facilities-grid { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 600px) {
+  .facilities-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .fac-row-labels { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .status-legend { gap: 6px; }
+  .fac-photo-area { height: 75px; }
+  .fac-status-badge { font-size: 9px; padding: 2px 6px; top: 6px; right: 6px; }
+  .fac-body { padding: 10px 10px 10px; }
+  .fac-icon-wrap { width: 32px; height: 32px; margin-bottom: 8px; }
+  .fac-name { font-size: 12px; margin-bottom: 4px; }
+  .fac-timing { font-size: 10px; gap: 3px; margin-bottom: 6px; }
+  .fac-desc { font-size: 11px; margin-bottom: 8px; -webkit-line-clamp: 2; }
+  .fac-report-link { font-size: 10px; padding-top: 8px; }
 }
 
 /* ── Facility Card ── */

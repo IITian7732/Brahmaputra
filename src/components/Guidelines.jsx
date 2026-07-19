@@ -122,7 +122,7 @@ const severityConfig = {
 };
 
 const Guidelines = () => {
-  const [openRule, setOpenRule] = useState(0);
+  const [openRule, setOpenRule] = useState(null);
 
   return (
     <div className="section guidelines bg-light">

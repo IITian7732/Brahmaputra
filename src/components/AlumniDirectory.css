@@ -235,9 +235,17 @@
 
 @media (max-width: 640px) {
   .release-glass-card {
-    padding: 32px 24px;
+    padding: 24px 16px;
   }
   .release-title {
     font-size: 1.5rem;
+  }
+  .mock-directory-grid {
+    grid-template-columns: 1fr;
+  }
+  .release-footer-note {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
   }
 }

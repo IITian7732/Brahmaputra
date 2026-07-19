@@ -196,8 +196,10 @@
 
 /* ── Responsive ── */
 @media (max-width: 640px) {
-  .guidelines-header { flex-direction: column; align-items: flex-start; }
-  .guidelines-pdf-btn { margin-top: 0; }
-  .rule-name { font-size: 13px; }
-  .rule-body { padding: 16px; }
+  .guidelines-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .guidelines-pdf-btn { margin-top: 0; width: 100%; justify-content: center; }
+  .rule-header { height: auto; min-height: 56px; padding: 12px 14px; }
+  .rule-header-left { flex-wrap: wrap; gap: 6px; }
+  .rule-name { font-size: 13.5px; line-height: 1.4; }
+  .rule-body { padding: 16px 14px; }
 }

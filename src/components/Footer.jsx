@@ -59,7 +59,7 @@ const Footer = () => {
               <ul className="footer-links">
                 {quickLinks.map((item, idx) => (
                   <li key={idx}>
-                    <a href={item.href}>{item.label}</a>
+                    <a href={item.href} className="footer-link">{item.label}</a>
                   </li>
                 ))}
               </ul>
@@ -70,15 +70,15 @@ const Footer = () => {
               <h4 className="footer-col-title">Contact Office</h4>
               <div className="footer-contact-list">
                 <div className="footer-contact-item">
-                  <MapPin size={16} className="contact-icon" />
+                  <MapPin size={16} className="footer-contact-icon" />
                   <span>Brahmaputra Hostel, IIT Guwahati, Guwahati — 781039, Assam</span>
                 </div>
                 <div className="footer-contact-item">
-                  <Phone size={16} className="contact-icon" />
-                  <span>+91 361 258 2772 (Hostel Office)</span>
+                  <Phone size={16} className="footer-contact-icon" />
+                  <span>+91 xxxxxx xxxxx (Hostel Office)</span>
                 </div>
                 <div className="footer-contact-item">
-                  <Mail size={16} className="contact-icon" />
+                  <Mail size={16} className="footer-contact-icon" />
                   <span>brahmaputra_off@iitg.ac.in</span>
                 </div>
               </div>
