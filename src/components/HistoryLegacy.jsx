@@ -4,37 +4,18 @@ import hostelImage from '../assets/hostel.jpg';
 import './HistoryLegacy.css';
 
 /* ── GC Data ── */
-const trophyData = {
-  '2024-25': [
-    { sport: 'Cricket',       position: 1, medal: 'gold' },
-    { sport: 'Football',      position: 1, medal: 'gold' },
-    { sport: 'Badminton',     position: 2, medal: 'silver' },
-    { sport: 'Basketball',    position: 2, medal: 'silver' },
-    { sport: 'Table Tennis',  position: 3, medal: 'bronze' },
-    { sport: 'Chess',         position: 3, medal: 'bronze' },
-  ],
-};
+const trophyData = {};
 
-const standingsData = {
-  '2024-25': [
-    { rank: 1, hostel: 'Brahmaputra', points: 850 },
-    { rank: 2, hostel: 'Kameng',      points: 820 },
-    { rank: 3, hostel: 'Umiam',       points: 790 },
-    { rank: 4, hostel: 'Barak',       points: 750 },
-    { rank: 5, hostel: 'Manas',       points: 710 },
-    { rank: 6, hostel: 'Lohit',       points: 680 },
-    { rank: 7, hostel: 'Subansiri',   points: 650 },
-  ],
-};
+const standingsData = {};
 
 const yearOptions = ['2024-25', '2023-24', '2022-23'];
 const sportFilters = ['All', 'Cricket', 'Football', 'Badminton', 'Basketball', 'Table Tennis', 'Chess', 'Athletics', 'Volleyball'];
 const milestones = [
   { year: '2011', desc: 'Brahmaputra Hostel established, first batch of residents' },
-  { year: '2013', desc: 'First Inter-Hostel GC Championship victory' },
   { year: '2017', desc: 'Gym facility inaugurated, expanded sports equipment' },
+  { year: '2020', desc: 'Won Spardha Championship' },
   { year: '2021', desc: 'Music Room and new recreational areas added' },
-  { year: '2024', desc: 'Juice Center & renovated common areas launched' },
+  { year: '2024', desc: 'Won Spardha Championship' },
 ];
 
 const medaleColors = {
@@ -154,12 +135,12 @@ const HistoryLegacy = () => {
           {/* GC Summary Stats */}
           <div className="gc-summary-stats">
             {[
-              { num: '7', lbl: 'Championships Won' },
-              { num: '1st', lbl: 'Current Standing 2024-25' },
-              { num: 'Cricket', lbl: 'Strongest Sport' },
-            ].map(s => (
-              <div key={s.num} className="gc-stat-box">
-                <span className="gc-stat-num">{s.num}</span>
+              { num: 'To be Updated', lbl: 'Championship Status' },
+              { num: 'To be Updated', lbl: 'Current Standing 2024-25' },
+              { num: 'To be Updated', lbl: 'GC Points & Standings' },
+            ].map((s, idx) => (
+              <div key={idx} className="gc-stat-box">
+                <span className="gc-stat-num" style={s.num.length > 5 ? { fontSize: '1.25rem' } : {}}>{s.num}</span>
                 <span className="gc-stat-lbl">{s.lbl}</span>
               </div>
             ))}
@@ -204,7 +185,7 @@ const HistoryLegacy = () => {
               ) : (
                 <div className="cabinet-empty">
                   <Trophy size={40} style={{ color: '#D1D5DB' }} />
-                  <p>Data coming soon for {gcYear}</p>
+                  <p>To be Updated</p>
                 </div>
               )}
             </div>
@@ -234,7 +215,8 @@ const HistoryLegacy = () => {
                 })}
                 {standings.length === 0 && (
                   <div className="cabinet-empty">
-                    <p>No standings data for {gcYear}</p>
+                    <Medal size={40} style={{ color: '#D1D5DB', marginBottom: '8px' }} />
+                    <p>To be Updated</p>
                   </div>
                 )}
               </div>

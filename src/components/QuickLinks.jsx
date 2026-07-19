@@ -1,5 +1,5 @@
 import React from 'react';
-import { AlertTriangle, Sparkles, AlertCircle, Wifi, ExternalLink } from 'lucide-react';
+import { AlertTriangle, Sparkles, AlertCircle, Wifi, MessageSquare, ExternalLink } from 'lucide-react';
 import { FaWhatsapp, FaInstagram } from 'react-icons/fa';
 import { PiMicrosoftOutlookLogo } from 'react-icons/pi';
 import './QuickLinks.css';
@@ -16,14 +16,14 @@ const complaintForms = [
     title: 'Room Cleaning Service',
     desc: 'Request room cleaning and housekeeping service',
     icon: <Sparkles size={20} />,
-    link: '#',
+    link: 'https://forms.gle/CFo3R29hqZwK3nMj7',
     color: '#2563EB',
   },
   {
     title: 'Appliance Complaint',
-    desc: 'Washing machines, water coolers, vending machine issues',
+    desc: 'Washing machines, water coolers, vending machine, pantry issues',
     icon: <AlertCircle size={20} />,
-    link: '#',
+    link: 'https://forms.gle/xgCExftZyc2RvevL8',
     color: '#EA580C',
   },
   {
@@ -32,6 +32,13 @@ const complaintForms = [
     icon: <Wifi size={20} />,
     link: 'https://www.iitg.ac.in/cb/',
     color: '#7C3AED',
+  },
+  {
+    title: 'General Complaints & Suggestions',
+    desc: 'Report general complaints or suggestions for the hostel other than above options',
+    icon: <MessageSquare size={20} />,
+    link: 'https://forms.gle/bMJ83nc4gFgawNkc9',
+    color: '#0D9488',
   },
 ];
 

@@ -131,6 +131,13 @@
   margin-bottom: 16px;
 }
 
+.footer-maps-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
 .maps-pill {
   display: inline-flex;
   align-items: center;
@@ -142,11 +149,21 @@
   font-size: 13px;
   font-weight: 500;
   text-decoration: none;
-  transition: filter 0.15s ease, transform 0.15s ease;
+  transition: filter 0.15s ease, transform 0.15s ease, background 0.15s ease;
 }
 .maps-pill:hover {
   filter: brightness(0.92);
   transform: translateY(-1px);
+}
+
+.brahma-map-pill {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+.brahma-map-pill:hover {
+  background: rgba(255, 255, 255, 0.22) !important;
+  color: white !important;
 }
 
 /* ── Bottom Bar ── */
