@@ -41,13 +41,13 @@ const Footer = () => {
                 The Legacy, The Brotherhood, The Excellence
               </p>
               <div className="footer-socials">
-                <a href="https://www.instagram.com/brahmaputra_hostel_iitg" target="_blank" rel="noreferrer" className="social-icon" aria-label="Instagram">
+                <a href="#quick-links" className="social-icon" aria-label="Instagram">
                   <FaInstagram size={18} />
                 </a>
-                <a href="#" className="social-icon" aria-label="WhatsApp">
+                <a href="#quick-links" className="social-icon" aria-label="WhatsApp">
                   <FaWhatsapp size={18} />
                 </a>
-                <a href="mailto:brahmaputra_off@iitg.ac.in" className="social-icon" aria-label="Email">
+                <a href="#quick-links" className="social-icon" aria-label="Email">
                   <PiMicrosoftOutlookLogo size={18} />
                 </a>
               </div>
@@ -75,7 +75,7 @@ const Footer = () => {
                 </div>
                 <div className="footer-contact-item">
                   <Phone size={16} className="footer-contact-icon" />
-                  <span>+91 xxxxxx xxxxx (Hostel Office)</span>
+                  <span>+91 63878 43598 (Hostel Office)</span>
                 </div>
                 <div className="footer-contact-item">
                   <Mail size={16} className="footer-contact-icon" />

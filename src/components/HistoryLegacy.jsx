@@ -13,9 +13,11 @@ const sportFilters = ['All', 'Cricket', 'Football', 'Badminton', 'Basketball', '
 const milestones = [
   { year: '2011', desc: 'Brahmaputra Hostel established, first batch of residents' },
   { year: '2017', desc: 'Gym facility inaugurated, expanded sports equipment' },
-  { year: '2020', desc: 'Won Spardha Championship' },
   { year: '2021', desc: 'Music Room and new recreational areas added' },
-  { year: '2024', desc: 'Won Spardha Championship' },
+  { year: '2021', desc: 'Won Spardha Championship' },
+  { year: '2022', desc: 'Won Spardha Championship' },
+  { year: '2023', desc: 'Won Spardha Championship' },
+  { year: '2026', desc: 'Won Spardha Championship' },
 ];
 
 const medaleColors = {

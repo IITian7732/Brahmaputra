@@ -101,7 +101,7 @@ const BrahmaMapModal = ({ onClose }) => {
         {/* ── Modal Footer Bar ── */}
         <div className="map-modal-footer">
           <span>💡 Tip: Use the + / - buttons above or scroll to view different sections of the floor map.</span>
-          <span className="map-footer-credit">Created By: Mohit Kumar &amp; Contributors</span>
+          <span className="map-footer-credit">Created by Brahmaputra HMC</span>
         </div>
       </div>
     </div>

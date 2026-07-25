@@ -63,7 +63,7 @@ const currentHMC = [
   { role: 'Technical Secretary', name: 'Pruthvi Haleholi',   email: 'h.pruthvi@iitg.ac.in',      phone: '+91 96865 14772', image: imgPruthvi },
   { role: 'Welfare Secretary',   name: 'Priyanshu Bharadwaj',email: 'p.bhardwaj@iitg.ac.in',     phone: '+91 91420 29326', image: imgPriyanshu },
   { role: 'Maintenance Sec.',    name: 'Sameer Tikar',       email: 'ms.brahmaputra@iitg.ac.in', phone: '+91 82248 59160', image: imgSameer },
-  { role: 'Literary Secretary',  name: 'Raj Singh',          email: 'rajks6055@iitg.ac.in',      phone: '+91 70073 24283', image: imgRaj },
+  { role: 'Literary Secretary',  name: 'To be updated',      email: '—', phone: '—', image: imgNonOne },
   { role: 'Cultural Secretary',  name: 'To be updated',      email: '—', phone: '—', image: imgNonOne },
   { role: 'Media Head',          name: 'To be updated',      email: '—', phone: '—', image: imgNonOne },
 ];

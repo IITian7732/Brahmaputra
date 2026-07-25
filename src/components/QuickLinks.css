@@ -103,3 +103,95 @@
 @media (max-width: 768px) {
   .ql-grid { grid-template-columns: 1fr; }
 }
+
+/* ── Modal Overlay ── */
+.ipm-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px);
+}
+
+/* ── Modal Box ── */
+.ipm-modal {
+  background: #ffffff;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: inherit;
+}
+
+.ipm-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.ipm-modal-title {
+  color: var(--text-primary, #111827);
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.ipm-modal-close {
+  background: none;
+  border: none;
+  color: var(--text-muted, #9ca3af);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.2s;
+  margin-top: -4px;
+  margin-right: -4px;
+}
+
+.ipm-modal-close:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--text-primary, #111827);
+}
+
+.ipm-modal-text {
+  color: var(--text-muted, #4b5563);
+  font-size: 14.5px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Actions ── */
+.ipm-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 24px;
+  margin-top: 8px;
+}
+
+.ipm-modal-btn {
+  background: none;
+  border: none;
+  color: var(--brand-orange, #EA580C);
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px;
+  transition: opacity 0.2s;
+}
+
+.ipm-modal-btn:hover {
+  opacity: 0.7;
+}
