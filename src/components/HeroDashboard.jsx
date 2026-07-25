@@ -52,10 +52,11 @@ const HeroDashboard = () => {
   });
 
   const notices = [
-    "📅 Freshers' Accommodation: Room allotments for incoming freshers commence July 20, 2026",
     "🛠️ Post-holiday maintenance: Some amenities may experience brief pauses during initial semester days",
     "🛒 Stationery Shop Hours: Open 10:00 AM – 10:00 PM daily for all academic & personal supplies",
-    "🚲 Cycle & Dorm Essentials: Bicycles, mattresses, pillows available at Manas Community Hall",
+    "🚲 Cycle Registration: Please register your cycle at the security desk and collect your official cycle number.",
+    "🔒 Security Alert: Always ensure your room and cycle are securely locked to prevent any untoward incidents.",
+    "🚫 Freshers' Guideline: Freshers are strictly prohibited from visiting the 1st, 2nd, and 3rd floors due to the three-month interaction ban.",
   ];
 
   const weeklyMenu = {
