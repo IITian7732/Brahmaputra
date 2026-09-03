@@ -28,6 +28,9 @@ import imgAshutosh from '../assets/Ashutosh Singh.png';
 import imgHarsh from '../assets/Harsh Shukla.png';
 import imgNonOne from '../assets/Non One.jpeg';
 import imgSidharthTripathi from '../assets/Siddharth Tripathi.png';
+import imgAshish from '../assets/Ashish Kumar Yadav.png';
+import imgSayantanu from '../assets/Sayantanu Ghosh.png';
+import imgBhavya from '../assets/Bhavya Modi.png';
 import './HallOfFame.css';
 
 /* ── Portfolio Badge Config ── */
@@ -63,9 +66,9 @@ const currentHMC = [
   { role: 'Technical Secretary', name: 'Pruthvi Haleholi',   email: 'h.pruthvi@iitg.ac.in',      phone: '+91 96865 14772', image: imgPruthvi },
   { role: 'Welfare Secretary',   name: 'Priyanshu Bharadwaj',email: 'p.bhardwaj@iitg.ac.in',     phone: '+91 91420 29326', image: imgPriyanshu },
   { role: 'Maintenance Sec.',    name: 'Sameer Tikar',       email: 'ms.brahmaputra@iitg.ac.in', phone: '+91 82248 59160', image: imgSameer },
-  { role: 'Literary Secretary',  name: 'To be updated',      email: '—', phone: '—', image: imgNonOne },
-  { role: 'Cultural Secretary',  name: 'To be updated',      email: '—', phone: '—', image: imgNonOne },
-  { role: 'Media Head',          name: 'To be updated',      email: '—', phone: '—', image: imgNonOne },
+  { role: 'Literary Secretary',  name: 'Bhavya Modi',        email: 'm.bhavya@iitg.ac.in', phone: '+91 97840 24557', image: imgBhavya },
+  { role: 'Cultural Secretary',  name: 'Sayantanu Ghosh',    email: 'g.sayantanu@iitg.ac.in', phone: '+91 98355 57068', image: imgSayantanu },
+  { role: 'Media Head',          name: 'Ashish Kumar Yadav', email: 'ashishk7016@iitg.ac.in', phone: '+91 91629 55095', image: imgAshish },
 ];
 
 const pastHMC = [

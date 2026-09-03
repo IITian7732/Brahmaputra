@@ -59,14 +59,43 @@ const HeroDashboard = () => {
     "🚫 Freshers' Guideline: Freshers are strictly prohibited from visiting the 1st, 2nd, and 3rd floors due to the three-month interaction ban.",
   ];
 
+  // September Mess Menu
   const weeklyMenu = {
-    Monday:    { breakfast: "Uthapam, Sambhar, Coconut Chutney, Veg Chowmein, Fruit, Mandatory Items", lunch: "Jeera Aloo (Dry), Rajma Masala, Dal Fry, Plain Rice, Veg Raita, Plain/Ghee Roti, Curd", dinner: "Lauki Chana (Dry), Lobia Masala, Mix Dal Tadka, Tomato/Plain Rice, Jaljeera Drink, Plain/Ghee Roti" },
-    Tuesday:   { breakfast: "Poori Sabji, Jungli Sandwich, Fruit, Mandatory Items", lunch: "Mix Veg (Dry), Vatana Curry (White Peas), Arhar Dal Tadka, Jeera/Plain Rice, Masala Chaach, Plain/Ghee Roti, Curd", dinner: "Chole Bhature, Chatpate Aloo (Dry), Dhaba Dal Tadka, Lemonade, Plain Rice, Plain/Ghee Roti" },
-    Wednesday: { breakfast: "Masala Idli, Sambhar, Coconut Chutney, Macroni Pasta, Fruit, Mandatory Items", lunch: "Aloo Parwal (Dry), Black Masoor Dal, Dum Aloo, Buttermilk, Plain Rice, Plain/Ghee Roti, Curd", dinner: "Butter Chicken/Paneer Butter Masala, Indian Fried Rice, Dal Makhni, Aloo Capsicum (Dry), Tandoor Roti, Gulab Jamun, Tamarind Cooler" },
-    Thursday:  { breakfast: "Upma, Coconut Chutney, Kachori, Ghuguni, Fruit, Mandatory Items", lunch: "Mix Dal, Kadhi Pakora, Aloo Masala (Dry), Lemon Rice, Lemonade, Plain Rice, Plain/Ghee Roti, Curd", dinner: "Lauki Kofta/Egg Curry, Lehsuni Chana Dal, Aloo Pumpkin & Black Chana Dry, Jaljeera, Plain Rice, Plain/Ghee Roti" },
-    Friday:    { breakfast: "Pav Bhaji, Poha, Sev, Fruit, Mandatory Items", lunch: "Dhaba Dal Tadka, Nutrella Matar, Aloo Long Beans (Dry), Sweet Lassi, Plain/Masala Rice, Plain/Ghee Roti, Curd", dinner: "Kadhai Paneer/Andhra Fish Curry, Dal Panch Mel, Onion/Plain Rice, Tandoori Kasuri Methi Paratha, Shahi Tukda, Roohafza/Jaljeera" },
-    Saturday:  { breakfast: "Aloo Pyaz Parantha, Curd, Chutney, Masala Dalia, Fruit, Mandatory Items", lunch: "Dal Makhani, Corn Masala, Aloo Kundru (Dry), Curd/Plain Rice, Veg Raita, Plain/Ghee Roti, Curd", dinner: "Black Chana Masala (Dry), Masoor Dal, Aloo Matar Curry, Lemonade, Plain Rice, Plain/Ghee Roti" },
-    Sunday:    { breakfast: "Masala Dosa, Sambhar, Coconut Chutney, Vermicelli Upma, Fruit, Mandatory Items", lunch: "Moong Masoor Dal, Aloo Chokha (Dry), Black Chana Curry, Chinese Fried Rice, Butter Milk, Plain Rice, Plain/Ghee Roti, Curd", dinner: "Paneer Lababdar/Chicken Curry Masala, Veg Dum Biriyani, Yellow Dal Tadka, Tamarind Cooler, Ice Cream, Butter Naan/Roti, Plain Rice" },
+    Monday:    {
+      breakfast: "Poha + Sev, Vada Pav, Seasonal Fruits, Mandatory items",
+      lunch:     "Moong Mysore Dal, Long Beans (Dry), Rajma Curry, Plain Rice, Sweet Lassi, Plain Roti/Ghee Roti, Curd, Papad, Green Chutney",
+      dinner:    "Lauki Chana (Dry), Aloo Soyabeen, Arhar Dal, Plain Rice/Tomato Rice, Jaljeera, Plain Roti/Ghee Roti",
+    },
+    Tuesday:   {
+      breakfast: "Uttapam Coconut Chutney + Sambhar, Veg Chowmein, Seasonal Fruits, Mandatory items",
+      lunch:     "Mix Veg (Dry), Ridge Gourd Curry (Turai), Chana Dal, Jeera Rice/Plain Rice, Plain Roti/Ghee Roti, Curd, Watermelon Mint Cooler, Green Chutney",
+      dinner:    "Chole Bhature, Chatpate Aloo (Dry), Moong Dal, Masala Lemonade, Plain Rice, Plain Roti/Ghee Roti, Fryums",
+    },
+    Wednesday: {
+      breakfast: "Masala Idli + Sambhar + Vada + Coconut Chutney, White Sauce Pasta, Seasonal Fruits, Mandatory items",
+      lunch:     "Soya Keema Matar, Aloo Parwal (Dry), Black Mysore Dal, Plain Rice/Lemon Rice, Plain Roti/Ghee Roti, Veg Raita, Papad, Green Chutney",
+      dinner:    "Chicken Curry/Matar Paneer, Veg Pulao, Dal Makhni, Methi Paratha, Plain Rice, Rice Kheer, Roohafza, Roasted Papad",
+    },
+    Thursday:  {
+      breakfast: "Kachori + Ghuguni, Upma + Coconut Chutney, Seasonal Fruits, Mandatory items",
+      lunch:     "Kadhi Pakora, Baingan Bharta (Dry), Mati Dal (O Tanga), Masala Rice/Plain Rice, Plain Roti/Ghee Roti, Curd, Peanut Papad, Green Chutney, Chaas",
+      dinner:    "Lauki Kofta / Egg Curry, Black Chana Masala (Dry), Moong Mysore Dal, Plain Rice, Plain Roti/Ghee Roti, Lemon Water",
+    },
+    Friday:    {
+      breakfast: "Poori Sabji, Sweet Dalia, Seasonal Fruits, Mandatory items",
+      lunch:     "Karela Fry (Dry), Beson Gatte Sabji, Mix Dal, Curd Rice/Plain Rice, Watermelon Mint Cooler, Curd, Green Chutney",
+      dinner:    "Kadhai Paneer, Kadhai Chicken/Fish Masala Curry, Lehsuni Chana Dal, Masala Rice/Plain Rice, Plain Roti/Ghee Roti, Shahi Tukra, Masala Lemonade, Fryums",
+    },
+    Saturday:  {
+      breakfast: "Aloo Onion Paratha, Dahi Gur Chira, Seasonal Fruits, Mandatory items",
+      lunch:     "Khichdi (Vegetable), Corn Masala, Aloo Chokha (Dry), Dal Palak, Plain Rice/Lemon Rice, Roasted Papad, Curd, Green Chutney, Lemon Water",
+      dinner:    "Methi Matar Malai, Cabbage + Matar, Arhar Dal, Plain Rice, Plain Roti/Ghee Roti, Jaljeera, Fry Papad",
+    },
+    Sunday:    {
+      breakfast: "Mysore Masala Dosa, Sambhar + Coconut Chutney, Vermicelli Upma, Seasonal Fruits, Mandatory items",
+      lunch:     "Bhindi Fry (Dry), Vatana (White Peas) Curry, Dal Makhani, Curd rice, Butter Milk, Plain Rice, Plain Roti/Ghee Roti, Curd",
+      dinner:    "Paneer Butter Masala/Chicken Butter Masala, Butter Naan, Chana Dal, Veg Dum Biryani/Plain Rice, Roohafza, Ice-Cream, Roasted Papad",
+    },
   };
 
   const isWeekend = ['Saturday', 'Sunday'].includes(days[selectedDayIdx]);
